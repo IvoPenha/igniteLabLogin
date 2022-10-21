@@ -16,7 +16,7 @@ export function Form(){
                     <TextInput.Icon>
                         <Envelope></Envelope>
                     </TextInput.Icon>
-                    <TextInput.Input placeholder="Insira seu Email"/>
+                    <TextInput.Input placeholder="Insira seu Email" type={"email"}/>
                 </TextInput.Div>
 
             </div>
@@ -28,7 +28,7 @@ export function Form(){
                     <TextInput.Icon>
                         <Lock></Lock>
                     </TextInput.Icon>
-                    <TextInput.Input placeholder="Insira sua Senha"/>
+                    <TextInput.Input placeholder="Insira sua Senha" type={"password"}/>
                 </TextInput.Div>
             </div>
             <div className="flex justify-start gap-2 mr-[190px] my-3">
