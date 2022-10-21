@@ -10,22 +10,31 @@ function TextInputDiv(props: TextInputDivProps){
     return(
     <div
     className={clsx(
-        '  flex rounded px-4 py-3 bg-gray-800 outline-none focus:ring-2  ring-cyan-300 w-96')}>
+        '  flex rounded px-4 py-4  focus-within:ring ring-cyan-300  bg-gray-800 outline-none  w-[410px]')}>
         {props.children}
     </div>
     )
 }
-
-function TextInputIcon(){
-
+interface TextInputIconProps{
+    children: ReactNode;
 }
+
+function TextInputIcon(props: TextInputIconProps){
+   return(
+    <Slot className='w-6 h-6 text-gray-200'>
+        {props.children}
+    </Slot>
+
+   )
+}
+TextInputIcon.displayName='TextInputIcon' 
 
 interface TextInputProps extends InputHTMLAttributes<HTMLInputElement>{} 
 
 function TextInputInput(props: TextInputProps){
     return(
 
-        <input  className={clsx(' flex-1 bg-transparent outline-none text-gray-100 text-xs placeholder:text-gray-200' )}
+        <input  className={clsx(' flex-1 pl-3 bg-transparent outline-none text-gray-100 text-xs placeholder:text-gray-200' )}
         {...props}
         />
     )
@@ -33,5 +42,6 @@ function TextInputInput(props: TextInputProps){
 export const TextInput ={
 
     Div: TextInputDiv,
+    Icon:TextInputIcon,
     Input: TextInputInput,
 }

@@ -5,8 +5,8 @@ export default {
     component: Text,
     args:{
         size: 'md',
-        children:'Lorem Ipsum!'
-        
+        children:'Lorem Ipsum!',
+        color:'gray',
     },
     argTypes:{
         size:{
@@ -15,6 +15,10 @@ export default {
                 type : 'inline-radio'
             },
             
+        },
+        color:{
+            options:['gray', 'white'],
+            control:{  type: 'radio'}
         },
         asChild:{
             table:{disable:true}
@@ -25,7 +29,8 @@ export default {
 
 export const Default: StoryObj = {}
 export const Small: StoryObj ={args:{size:'sm'}} 
-export const Large: StoryObj ={args:{size:'lg'}} 
+export const Large: StoryObj ={args:{size:'lg'}}
+export const white : StoryObj ={args:{color:'white'}} 
 export const CustomText: StoryObj<TextProps> ={
     args:{
         asChild: true,
@@ -33,7 +38,14 @@ export const CustomText: StoryObj<TextProps> ={
     },
     argTypes:{
         children:{
-                table:{disable: true}  
+            table: {disable: true},
+
+        },
+        asChild:{
+            table:{
+                disable: false
+            }
         }
+        
     }
 } 
